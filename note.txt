@@ -1,0 +1,33 @@
+Caso de teste 1 - Criar um usuário
+{
+  "userName": "Mauricio",
+  "password": "Teste@123"
+}
+{
+    "userID": "2327ef9f-454d-48aa-8bca-b415bb12ad80",
+    "username": "Mauricio",
+    "books": []
+}
+
+
+Corpo da Resposta: {
+  userID: '5d6e3286-84d1-46b6-9672-a2f7910688ba',
+  username: 'Mauricio8',
+  books: []
+}
+
+caso de teste 2 - Gerar um token de acesso
+
+// Usar um usuário ja existente
+{
+  "userName": "Mauricio",
+  "password": "Teste@123"
+}
+
+// Retorno
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6Ik1hdXJpY2lvIiwicGFzc3dvcmQiOiJUZXN0ZUAxMjMiLCJpYXQiOjE3NTk0NDM1OTB9.6RDwFcKV1H1sINcGX2AurJ4oXVseo-wUh8ae55c_CEM",
+    "expires": "2025-10-09T22:19:50.211Z",
+    "status": "Success",
+    "result": "User authorized successfully."
+}
