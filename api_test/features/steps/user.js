@@ -8,7 +8,7 @@ let user;
 // Cenario 1 - Criar um usuário
 Given('que eu crie um novo usuario', function () {
     user = {
-        userName: 'Mauricio12',
+        userName: 'Mauricio17',
         password: 'Teste@123'
     };
 });
@@ -38,26 +38,26 @@ Then('a API deve retornar o status {int}', function (statusCode) {
 
 // Cenario 2 - Gerar um token de acesso
 When('eu gero um token para o usuário já criado', async function () {
-    try{
+    try {
         response = await axios.post("https://demoqa.com/Account/v1/GenerateToken", user);
-    }catch (error){
+    } catch (error) {
         response = error.response;
     }
     console.log("Dados de retorno:", response.data);
     console.log("Status retonado:", response.status);
 });
 
-Then('a API deve retornar status Success', function(){
+Then('a API deve retornar status Success', function () {
     // Validando o status esperado.
     assert.strictEqual(response.data.status, "Success", "Status diferente do esperado")
 });
 
-Then('a data de expiração do token', function(){
+Then('a data de expiração do token', function () {
     // Validando o retorno da data de expiração e se a data é valida
     const expiredDate = new Date(response.data.expires);
 
     assert.ok(expiredDate, "Retorno da data de expiração vazio");
-    
+
     // Verificando se a data é valida
     assert.ok(!isNaN(expiredDate.getDate()), "Data de expiração não é valida");
 
@@ -66,14 +66,33 @@ Then('a data de expiração do token', function(){
     assert.ok(expiredDate > now, "Data de expiração deve ser futura");
 });
 
-Then('a o valor do token', function(){
+Then('a o valor do token', function () {
     // Validando se o token retornou 
     assert.ok(response.data.token, "Retorno do token Vazio");
 });
 
-Then('resultado autorizando o acesso', function(){
+Then('resultado autorizando o acesso', function () {
     // Validando o retorno do result 
     const dataResult = response.data.result;
 
     assert.ok(dataResult.includes('success'), "A mensagem não retornou como esperado.");
+});
+
+// Cenario 3 - Confirmar se o usuário criado está autorizado
+When('eu tenho um usuário já criado com token', async function () {
+    try {
+        response = await axios.post("https://demoqa.com/Account/v1/Authorized", user);
+    } catch (error) {
+        response = error.response;
+    }
+});
+
+Then('consultando se o usuário está autorizando para acessar', function () {
+    const authorized = (response.data);
+
+    assert.strictEqual(authorized, true, "Usuário não autorizado!");
+
+    if (authorized === true){
+        console.log("Usuário autorizado!")
+    }
 });

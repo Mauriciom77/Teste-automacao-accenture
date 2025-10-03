@@ -12,3 +12,7 @@ Feature: API de Usuários
     And a data de expiração do token
     And a o valor do token
     And resultado autorizando o acesso
+
+  Scenario: Validação se o usuário criado está autorizando
+    When eu tenho um usuário já criado com token
+    Then consultando se o usuário está autorizando para acessar
