@@ -12,7 +12,8 @@
   },
   "scripts": {
     "test": "cucumber-js",
-    "debug": "node --inspect-brk ./node_modules/.bin/cucumber-js"
+    "test:user": "cucumber-js --profile user",
+    "test:books": "cucumber-js --profile book"
   },
   "keywords": [],
   "author": "",
