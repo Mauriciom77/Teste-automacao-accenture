@@ -17,6 +17,7 @@
     "test": "cucumber-js",
     "test:user": "cucumber-js --profile user",
     "test:books": "cucumber-js --profile book",
+    "test:rent": "cucumber-js --profile rent",
     "test:web": "cucumber-js --profile web",
     "debug:web": "node --inspect-brk ./node_modules/@cucumber/cucumber/bin/cucumber.js --require ./web_test/frontend_1/steps/**/Teste2.js ./web_test/frontend_1/features/**/testeFrontend1.feature"
   },

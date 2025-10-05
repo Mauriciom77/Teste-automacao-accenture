@@ -10,6 +10,9 @@ module.exports = {
   // O perfil 'user' executa apenas o arquivo user_management.feature.
   user: `${defaultOptions} ${featuresPath}userManagement.feature`,
 
+  // O perfil 'rent' executa apenas o arquivo rentBooks.feature.
+  rent: `${defaultOptions} ${featuresPath}rentBooks.feature`,
+
   // O perfil 'web' executa apenas o arquivo web_test.feature.
   web: `--require ./web_test/frontend_1/steps/**/*.js ./web_test/frontend_1/features/**/*.feature`
 };
