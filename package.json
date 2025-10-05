@@ -1,19 +1,24 @@
 {
   "dependencies": {
     "axios": "^1.12.2",
-    "selenium-webdriver": "^4.35.0"
+    "mocha": "11.7.1"
   },
   "name": "teste_automacao",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "devDependencies": {
-    "@cucumber/cucumber": "^12.2.0"
+    "@cucumber/cucumber": "^12.2.0",
+    "chai": "^6.2.0",
+    "chromedriver": "^141.0.0",
+    "selenium-webdriver": "^4.36.0"
   },
   "scripts": {
     "test": "cucumber-js",
     "test:user": "cucumber-js --profile user",
-    "test:books": "cucumber-js --profile book"
+    "test:books": "cucumber-js --profile book",
+    "test:web": "cucumber-js --profile web",
+    "debug:web": "node --inspect-brk ./node_modules/@cucumber/cucumber/bin/cucumber.js --require ./web_test/frontend_1/steps/**/Teste2.js ./web_test/frontend_1/features/**/testeFrontend1.feature"
   },
   "keywords": [],
   "author": "",
