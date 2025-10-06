@@ -14,5 +14,5 @@ module.exports = {
   rent: `${defaultOptions} ${featuresPath}rentBooks.feature`,
 
   // O perfil 'web' executa apenas o arquivo web_test.feature.
-  web: `--require ./web_test/frontend_1/steps/**/*.js ./web_test/frontend_1/features/**/*.feature`
+  web: `--require ./web_test/frontend/steps/**/*.js ./web_test/frontend/features/**/*.feature`
 };

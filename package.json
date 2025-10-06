@@ -9,6 +9,7 @@
   "main": "index.js",
   "devDependencies": {
     "@cucumber/cucumber": "^12.2.0",
+    "@faker-js/faker": "^10.0.0",
     "chai": "^6.2.0",
     "chromedriver": "^141.0.0",
     "selenium-webdriver": "^4.36.0"
@@ -19,7 +20,7 @@
     "test:books": "cucumber-js --profile book",
     "test:rent": "cucumber-js --profile rent",
     "test:web": "cucumber-js --profile web",
-    "debug:web": "node --inspect-brk ./node_modules/@cucumber/cucumber/bin/cucumber.js --require ./web_test/frontend_1/steps/**/Teste2.js ./web_test/frontend_1/features/**/testeFrontend1.feature"
+    "debug:web": "node --inspect-brk ./node_modules/@cucumber/cucumber/bin/cucumber.js --require ./web_test/frontend/steps/**/Teste3.js ./web_test/frontend/features/**/testeFrontend.feature"
   },
   "keywords": [],
   "author": "",
